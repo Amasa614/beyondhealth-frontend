@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>beyondhealth</title>
+    <link rel="icon" type="image/x-icon" href="/html/images/image-removebg-preview (2).png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/bootstrap-icons.min.css" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        .btn-custom {
+          background-color: #086972; /* Replace with your desired color */
+          border-color: #086972; /* Replace with your desired color */
+          color: #ffffff; /* Replace with your desired text color */
+        }
+
+        .btn-custom:hover {
+            background-color: #053B40; /* Same as background-color above */
+            border-color: #053B40; /* Same as border-color above */
+            color: white; /* Same as color above */
+         }
+
+         .btn-custom-outline {
+          border-radius: 6px;
+          border-color: #053B40;
+          background-color: white;
+         }
+
+         .btn-custom-outline:hover {
+          background-color: #086972;
+          color: white;
+
+         }
+
+         .custom-navbar {
+            background-color: #ffffff; /* Replace with your desired color */
+              }
+
+              .nav-shadow {
+                box-shadow: 0px 0.5px 6px rgba(97, 96, 96, 0.4);
+              }
+              .navbar {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+              }
+                .card {
+                max-width: 17rem;
+              }
+
+              .card-img-top {
+                height: 200px;
+                object-fit: cover;
+              }
+
+              .modal-backdrop {
+            backdrop-filter: blur(4px); /* Add blur effect to the backdrop */
+              }
+      </style>
+  </head>
+  <body>
+        <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand"> <img src="/html/images/image-removebg-preview (1).png" width="200px" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-toggle="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a  class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" href="#">About Us</a>
+                </li>
+               
+                <div class="dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Products
+                  </a>
+                
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://symptomate.com/interview/0">Symptom Checker</a></li>
+                    <li><a class="dropdown-item" href="https://booking.appointy.com/Jeffery">Appointment Booking</a></li>
+                    <li><a class="dropdown-item" href="#">Clinical Reports/Diagnosis</a></li>
+                  </ul>
+                </div>
+                
+                <li class="nav-item">
+                    <a  class="nav-link" href="#">Blog</a>
+                </li>  
+            </ul>
+            <div class="col-md-3 text-end">
+                <button type="button" class="btn btn-custom-outline me-2">Login</button>
+                <a href="https://example.com" class="btn btn-custom">sign-up</a>
+              </div>
+            </div>
+        </div> 
+    </nav>
+    <div id="myModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content rounded-4 shadow">
+          <div class="modal-body p-md-4">
+            <h2 class="fw-bold mb-0">What's new?</h2>
+    
+            <ul class="d-grid gap-4 my-5 list-unstyled small">
+              <li class="d-flex gap-4">
+                <svg class="bi text-body-secondary flex-shrink-0 " role="img" width="48" height="48"><use xlink:href="#grid-fill"></use></svg>
+                <div>
+                  <h5 class="mb-0">Clinical Planning and diagnosis</h5>
+                  Discover our latest feature designed to enhance your clinical practice. With Clinical Planning and Diagnosis, we're revolutionizing the way healthcare professionals approach patient care.
+                </div>
+
+              <li class="d-flex gap-4">
+                <svg class="bi text-primary flex-shrink-0" width="48" height="48"><use xlink:href="#film"></use></svg>
+                <div>
+                  <h5 class="mb-0">Clinical Reporting</h5>
+                  We're excited to unveil our latest feature, Advanced Clinical Reporting, designed to elevate the way healthcare professionals generate and analyze clinical reports.
+                </div>
+              </li>
+            </ul>
+            <button id="closeButton" type="button" class="btn btn-custom mt-4 w-100">Great, thanks!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+
+      // Show the modal on page load
+      myModal.show();
+
+      // Hide the modal when the button is clicked
+      document.getElementById('closeButton').addEventListener('click', function() {
+        myModal.hide();
+      });
+    });
+  </script>
+
+    <!--section 1-->
+
+    <section>
+    <div class="container">
+    <div class="px-4 pt-5 my-5 text-center">
+        <h1 class="display-4 fw-bold text-body-emphasis">Introducing beyondhealth</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">In an increasingly complex and data-driven world, our cutting-edge AI solutions empower medical professionals, patients, and healthcare organizations to make informed decisions, improve patient outcomes, and enhance the overall healthcare experience.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+            <a href="./dashboard.html" type="button" class="btn btn-custom btn-lg px-4 me-sm-3">Explore Dashboard <i class="bi bi-arrow-right"></i></button></a>
+          </div>
+        </div>
+        <div class="" style="max-height: 60vh;">
+          <div class="container">
+            <img src="/html/images/CLINICAL NOTES filled.png" class="img-fluid" alt="Example image" width="700" height="500" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+ <!--feature section-->
+    <section class="px-4 pt-4 my-4">
+        <div class="container mt-5">
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                  </div>
+                  <div>
+                    <h3 class="fs-2">Clinical Reporting & Diagnosis</h3>
+                    <p>Streamline your healthcare journey with accurate clinical reporting and diagnosis, providing you with comprehensive insights into your health condition and enabling personalized treatment plans.</p>
+                    <a href="#" class="btn btn-custom">
+                      Learn more 
+                    </a>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                  </div>
+                  <div>
+                    <h3 class="fs-2">Robust Symptom Checker</h3>
+                    <p>Take control of your health by using our robust symptom checker, empowering you to quickly identify potential health issues and make informed decisions about your well-being.</p>
+                    <a href="#" class="btn btn-custom">
+                      Learn more 
+                    </a>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                  </div>
+                  <div>
+                    <h3 class="fs-2">Appointment Booking </h3>
+                    <p> Simplify scheduling with our convenient appointment booking feature, allowing you to effortlessly secure appointments with healthcare providers at your preferred time and location.</p>
+                    <a href="#" class="btn btn-custom">
+                      Learn more 
+                    </a>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </section>
+
+    <!--features-->
+    <section>
+    <div class="container col-xxl-8 px-4 py-4">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img src="/html/images/Frame 22.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Clinical Planning and Diagnosing Tools</h1>
+            <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <a href="C:\Users\jeffe\OneDrive\Documents\GitHub\beyondhealth-2.0\html\html\dashboard.html"><button type="button" class="btn btn-custom btn-lg px-4 me-md-2">Explore</button></a>
+              <button type="button" class="btn btn-outline-secondary btn-lg px-4">Read docs</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <!--Symptom checker section-->
+     <section>
+        <div class="container">
+        <div class="px-4 pt-4 my-4 text-center">
+            <h1 class="display-4 fw-bold text-body-emphasis">Equipped with powerful API's</h1>
+            <div class="col-lg-6 mx-auto">
+              <p class="lead mb-4">In an increasingly complex and data-driven world, our cutting-edge AI solutions empower medical professionals, patients, and healthcare organizations to make informed decisions, improve patient outcomes, and enhance the overall healthcare experience.</p>
+              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                <a href="https://symptomate.com/interview/0" class="btn btn-custom btn-lg px-4 me-sm-3">Check Symptoms <span></span><i class="bi bi-arrow-right"></i></button></a>
+              </div>
+            </div>
+            <div class="" style="max-height: 60vh;">
+              <div class="container">
+                <img src="/html/images/Group 11106.png" class="img-fluid" alt="Example image" width="700" height="500" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+
+        <!--feature -->
+    <section class="px-4 pt-5 my-3">
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img src="/html/images/Frame 23.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+              </div>
+              <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Book Appointments with clinics around you.</h1>
+                <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                  
+                  <a href="https://booking.appointy.com/Jeffery" class="btn btn-custom btn-lg">Book appointment</a>
+                  <button type="button" class="btn btn-custom-outline btn-lg px-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Available clinics
+                  </button>
+                  
+          <!-- Modal -->
+                  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="staticBackdropLabel">Available clinics</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card" style="width: 16rem;">
+                                <img src="/html/images/ug hos.jpg" class="card-img-top" alt="University Hospital">
+                                <div class="card-body">
+                                  <h5 class="card-title">University Hospital</h5>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="https://booking.appointy.com/Jeffery" class="btn btn-custom">Book appointment</a>
+                                </div>
+                              </div>
+                              <div class="card my-3" style="width: 16rem;">
+                                <img src="/html/images/hos 2.jpg" class="card-img-top" alt="University Hospital">
+                                <div class="card-body">
+                                  <h5 class="card-title">UGMC, Legon</h5>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="https://booking.appointy.com/Jeffery" class="btn btn-custom">Book appointment</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-custom-outline" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <!--Carousel-->
+<section>
+  <div class="container col-xxl-8 px-3 py-3">
+    <div class="px-4 pt-4 my-4 text-center mb-2">
+      <h2 class="display-4 fw-bold text-body-emphasis mb-3 p-md-3">Our patient care journey visualized</h2>
+      <p class="lead mb-5"> Our patient care journey is broken down into 5 simple steps</p>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
+      <div class="carousel-inner mx-auto">
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <img src="/html/images/Mosquito bite-pana.png" class="card-img-top" alt="mosquito bite">
+                <div class="card-body">
+                  <h5>Patient at home</h5>
+                  <p class="card-text">It is Saturday night. A patient is experiencing unusual symptoms. Eventually, they search their symptoms online. What they find is ambiguous. One of the search results proposes using beyondhealth's symptom checking tool.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="/html/images/Online test-pana.png" class="card-img-top" alt="mosquito bite">
+                <div class="card-body">
+                  <h5>Symptom assessment</h5>
+                  <p class="card-text">By adding their symptoms and answering questions, the patient quickly discovers possible causes, as well as their triage level. Results are linked with clinics available in their area.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="/html/images/Date picker-pana.png" class="card-img-top" alt="mosquito bite">
+                <div class="card-body">
+                  <h5>Appointment booking</h5>
+                  <p class="card-text">From the results screen, the patient easily moves to the clinic’s booking site. The search criteria, based on the symptom check results, are already set, and the user journey is short and efficient. The patient decides to book an appointment</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-md-4 ">
+              <div class="card"> 
+                <img src="/html/images/Doctors-pana.png" class="card-img-top" alt="mosquito bite">
+                <div class="card-body">
+                  <h5>Diagnosis & Clinical Plans </h5>
+                  <p class="card-text">The patient easily shares their test results with healthcare providers through the platform. This enables healthcare professionals to make accurate differential diagnoses and develop tailored clinical plans. The streamlined process improves clinical decisions and reduces wait times.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 ">
+            <div class="card">
+              <img src="/html/images/Oncology patient-pana.png" class="card-img-top" alt="mosquito bite">
+              <div class="card-body">
+                <h5>Emergency Services</h5>
+                <p class="card-text">In cases of emergencies, our platform ensures swift access to emergency services. With just a few clicks, patients can connect with emergency responders who can provide immediate assistance. This feature is designed to prioritize critical situations and ensure prompt medical attention when every second counts</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="card">
+              <img src="/html/images/Profile data-pana.png" class="card-img-top" alt="mosquito bite">
+              <div class="card-body">
+                <h5>Continued Care</h5>
+                <p class="card-text">Our platform facilitates ongoing communication and collaboration between patients and healthcare professionals. Through secure messaging and virtual consultations, patients can easily connect with their healthcare providers, ask questions, and receive guidance on managing their health conditions.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+    </div>
+  </div>
+</section>
+
+
+    <!--Sign up CTA-->
+
+    <section class="px-4 pt-4 my-4">
+        <div class="container col-xxl-8 ">
+    <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+          <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Vertically centered hero sign-up form</h1>
+          <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+          <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+            </div>
+            <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+            <button class="w-100 btn btn-lg btn btn-custom" type="submit">Get Started</button>
+            <hr class="my-4">
+            <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+            <div>
+              <a href="#">Already have an account? Login</a>
+            </div>
+          
+          </form>
+        </div>
+      </div>
+        </div>
+</section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+
+  <footer class="py-5 bg-body-tertiary" >
+    <div class="container">
+    <div class="row">
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-5 offset-md-1 mb-3">
+        <form>
+          <h5>Subscribe to our newsletter</h5>
+          <p>Monthly digest of what's new and exciting from us.</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Email address</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Email address" spellcheck="true" data-ms-editor="true">
+            <!-- Button trigger modal -->
+                <button type="button" class="btn btn-custom " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Subscribe
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Newsletter Subscription</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <p> Thank you for subscribing to our newsletter</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>© 2023 beyondhealth. All rights reserved.</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+</html>

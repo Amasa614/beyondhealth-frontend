@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report Editor</title>
+  <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Report Editor</h1>
+    <div id="toolbar">
+      <button class="ql-bold"></button>
+      <button class="ql-italic"></button>
+      <button class="ql-underline"></button>
+      <button class="ql-strike"></button>
+      <button class="ql-link"></button>
+    </div>
+    <div id="editor" style="height: 300px;"></div>
+    <button id="addReportBtn">Add Report</button>
+    <ul id="reportList"></ul>
+  </div>
+
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script>
+    // Initialize Quill editor
+    const editor = new Quill('#editor', {
+      theme: 'snow'
+    });
+
+    // Array to store reports
+    let reports = [];
+
+    // Get references to HTML elements
+    const addReportBtn = document.getElementById('addReportBtn');
+    const reportList = document.getElementById('reportList');
+
+    // Event listener for "Add Report" button
+    addReportBtn.addEventListener('click', function() {
+      const content = editor.root.innerHTML;
+      addReport(content);
+    });
+
+    // Add a new report to the array and update the display
+    function addReport(content) {
+      const report = {
+        content: content
+      };
+      reports.push(report);
+      loadReports();
+      editor.root.innerHTML = '';
+    }
+
+    // Load and display the reports
+    function loadReports() {
+      reportList.innerHTML = '';
+      reports.forEach(function(report, index) {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = report.content;
+        listItem.setAttribute('data-index', index);
+        listItem.classList.add('report-item');
+        listItem.addEventListener('click', function() {
+          editReport(index);
+        });
+        reportList.appendChild(listItem);
+      });
+    }
+
+    // Edit the content of a report
+    function editReport(index) {
+      const report = reports[index];
+
+      // Show the edit controls and prefill the editor with report content
+      editor.root.innerHTML = report.content;
+      const saveChangesBtn = document.createElement('button');
+      saveChangesBtn.textContent = 'Save Changes';
+      saveChangesBtn.addEventListener('click', function() {
+        saveChanges(index);
+      });
+      const deleteReportBtn = document.createElement('button');
+      deleteReportBtn.textContent = 'Delete Report';
+      deleteReportBtn.addEventListener('click', function() {
+        deleteReport(index);
+      });
+      reportList.innerHTML = '';
+      reportList.appendChild(saveChangesBtn);
+      reportList.appendChild(deleteReportBtn);
+    }
+
+    // Save changes to the report
+    function saveChanges(index) {
+      const newContent = editor.root.innerHTML;
+      updateReportContent(index, newContent);
+      loadReports();
+      editor.root.innerHTML = '';
+    }
+
+    // Delete a report
+    function deleteReport(index) {
+      reports.splice(index, 1);
+      loadReports();
+      editor.root.innerHTML = '';
+    }
+
+    // Update the content of a report
+    function updateReportContent(index, newContent) {
+      reports[index].content = newContent;
+    }
+
+// Update the content of a report
+function updateReportContent(index, newContent) {
+  reports[index].content = newContent;
+}
+
+// Load initial reports
+loadReports();
+</script>
+</body>
+</html>
