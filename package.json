@@ -1,0 +1,20 @@
+{
+  "name": "beyondhealth-frontend",
+  "version": "1.0.0",
+  "description": "Front end for final year project",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amasa614/beyondhealth-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amasa614/beyondhealth-frontend/issues"
+  },
+  "homepage": "https://github.com/Amasa614/beyondhealth-frontend#readme"
+}
